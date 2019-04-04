@@ -1,4 +1,8 @@
-@import 'variables';
+@import 'shared/layout';
+@import 'shared/icons';
+@import 'shared/lists';
+@import 'shared/typography';
+@import './variables';
 
 // Base Navigation styles
 $nav-max-width: rem(360px);

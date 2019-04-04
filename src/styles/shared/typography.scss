@@ -1,3 +1,5 @@
+@import './breakpoints';
+
 $typography-condensed: em(640px);
 
 @mixin when-typography-not-condensed {

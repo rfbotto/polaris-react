@@ -1,3 +1,8 @@
+@import 'shared/breakpoints';
+@import 'shared/buttons';
+@import 'shared/icons';
+@import 'shared/typography';
+
 $fixed-column-width: rem(145px);
 $breakpoint: 768px;
 

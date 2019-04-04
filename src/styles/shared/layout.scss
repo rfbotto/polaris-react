@@ -1,3 +1,5 @@
+@import './breakpoints';
+
 /// To be used on flex items. Resolves some common layout issues, such as
 /// text truncation not respecting padding or breaking out of container.
 /// https://css-tricks.com/flexbox-truncated-text/

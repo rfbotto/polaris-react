@@ -1,3 +1,5 @@
+@import 'shared/accessibility';
+
 @function progress-bar-height($height: base) {
   $base: 16px;
   $data: (

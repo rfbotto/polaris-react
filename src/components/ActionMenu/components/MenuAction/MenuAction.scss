@@ -1,3 +1,7 @@
+@import 'shared/buttons';
+@import 'shared/controls';
+@import 'shared/icons';
+@import 'shared/typography';
 @import '../../tokens';
 
 $difference-between-touch-area-and-backdrop: control-height() -

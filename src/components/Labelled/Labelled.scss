@@ -1,3 +1,6 @@
+@import 'shared/accessibility';
+@import 'shared/typography';
+
 .hidden > .LabelWrapper {
   @include visually-hidden;
 }

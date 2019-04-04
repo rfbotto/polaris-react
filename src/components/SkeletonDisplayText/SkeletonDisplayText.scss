@@ -1,3 +1,6 @@
+@import 'shared/skeleton';
+@import 'shared/typography';
+
 $skeleton-display-text-max-width: rem(120px);
 
 @mixin skeleton-display-text-height($size) {
