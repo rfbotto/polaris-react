@@ -1,3 +1,5 @@
+@import 'foundation';
+
 @mixin text-container-spacing($spacing: base) {
   > *:not(:first-child) {
     margin-top: (spacing($spacing));

@@ -108,14 +108,6 @@ module.exports = ({config, mode}) => {
             includePaths: [path.resolve(__dirname, '..', 'src', 'styles')],
           },
         },
-        {
-          loader: 'sass-resources-loader',
-          options: {
-            resources: [
-              path.resolve(__dirname, '..', 'src', 'styles', 'foundation.scss'),
-            ],
-          },
-        },
       ],
     },
   ];

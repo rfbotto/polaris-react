@@ -19,10 +19,6 @@ const externalPackages = [
   ...Object.keys(dependencies),
   ...Object.keys(peerDependencies),
 ];
-const sassResources = [
-  resolve(styleRoot, './foundation.scss'),
-  // resolve(styleRoot, './shared.scss'),
-];
 
 module.exports = function createRollupConfig({entry, cssPath}) {
   return {
@@ -54,7 +50,6 @@ module.exports = function createRollupConfig({entry, cssPath}) {
       styles({
         output: cssPath,
         includePaths: [styleRoot],
-        includeAlways: sassResources,
         generateScopedName: getNamespacedClassName,
       }),
       image({

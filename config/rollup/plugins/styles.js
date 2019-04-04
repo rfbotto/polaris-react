@@ -21,7 +21,6 @@ module.exports = function styles(options = {}) {
   const {
     output,
     includePaths = [],
-    includeAlways = [],
     generateScopedName: userGenerateScopedName,
   } = options;
   const cssAndTokensByFile = {};
@@ -36,10 +35,6 @@ module.exports = function styles(options = {}) {
             context: process.cwd(),
           },
         );
-
-  const includeAlwaysSource = includeAlways
-    .map((resource) => readFileSync(resource, 'utf8'))
-    .join('\n');
 
   const processor = postcss([
     cssModulesValues,
@@ -68,7 +63,7 @@ module.exports = function styles(options = {}) {
       return new Promise((resolve, reject) => {
         render(
           {
-            data: `${includeAlwaysSource}\n${source}`,
+            data: source,
             includePaths: includePaths.concat(dirname(id)),
           },
           (error, result) => {
