@@ -1,8 +1,8 @@
-@import 'foundation';
-@import 'shared/controls';
-@import 'shared/layout';
-@import 'shared/page';
-@import 'shared/skeleton';
+@import '../../styles/foundation';
+@import '../../styles/shared/controls';
+@import '../../styles/shared/layout';
+@import '../../styles/shared/page';
+@import '../../styles/shared/skeleton';
 
 $action-text-spacing: rem(24px);
 $primary-action-button-height: rem(36px);

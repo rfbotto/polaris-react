@@ -1,5 +1,5 @@
-@import 'foundation';
-@import 'shared/typography';
+@import '../../styles/foundation';
+@import '../../styles/shared/typography';
 
 .Subheading {
   @include text-style-subheading;

@@ -1,11 +1,11 @@
-@import 'foundation';
-@import 'shared/breakpoints';
-@import 'shared/buttons';
-@import 'shared/icons';
-@import 'shared/links';
-@import 'shared/interaction-state';
-@import 'shared/layout';
-@import 'shared/typography';
+@import '../../styles/foundation';
+@import '../../styles/shared/breakpoints';
+@import '../../styles/shared/buttons';
+@import '../../styles/shared/icons';
+@import '../../styles/shared/links';
+@import '../../styles/shared/interaction-state';
+@import '../../styles/shared/layout';
+@import '../../styles/shared/typography';
 
 $image-size: rem(20px);
 $item-min-height: rem(40px);

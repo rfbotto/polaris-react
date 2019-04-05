@@ -1,8 +1,8 @@
-@import 'foundation';
-@import 'shared/buttons';
-@import 'shared/controls';
-@import 'shared/icons';
-@import 'shared/typography';
+@import '../../../../../../styles/foundation';
+@import '../../../../../../styles/shared/buttons';
+@import '../../../../../../styles/shared/controls';
+@import '../../../../../../styles/shared/icons';
+@import '../../../../../../styles/shared/typography';
 @import '../../tokens';
 
 $difference-between-touch-area-and-backdrop: control-height() -

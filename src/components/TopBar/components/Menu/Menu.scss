@@ -1,6 +1,6 @@
-@import 'foundation';
-@import 'shared/breakpoints';
-@import 'shared/buttons';
+@import '../../../../styles/foundation';
+@import '../../../../styles/shared/breakpoints';
+@import '../../../../styles/shared/buttons';
 
 $activator-variables: (
   min-width: rem(36px),

@@ -1,4 +1,4 @@
-@import 'shared/accessibility';
+@import '../../styles/shared/accessibility';
 
 .VisuallyHidden {
   @include visually-hidden;

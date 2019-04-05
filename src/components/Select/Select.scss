@@ -1,7 +1,7 @@
-@import 'foundation';
-@import 'shared/controls';
-@import 'shared/typography';
-@import 'shared/icons';
+@import '../../styles/foundation';
+@import '../../styles/shared/controls';
+@import '../../styles/shared/typography';
+@import '../../styles/shared/icons';
 
 $stacking-order: (
   backdrop: 10,

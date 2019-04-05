@@ -1,6 +1,6 @@
-@import 'foundation';
-@import 'shared/breakpoints';
-@import 'shared/typography';
+@import '../../styles/foundation';
+@import '../../styles/shared/breakpoints';
+@import '../../styles/shared/typography';
 
 // reduces the radii of the circle to half the size of the smallest side
 $border-radius: 999px;

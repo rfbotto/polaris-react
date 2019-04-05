@@ -1,9 +1,9 @@
-@import 'foundation';
-@import 'shared/buttons';
-@import 'shared/controls';
-@import 'shared/icons';
-@import 'shared/links';
-@import 'shared/typography';
+@import '../../styles/foundation';
+@import '../../styles/shared/buttons';
+@import '../../styles/shared/controls';
+@import '../../styles/shared/icons';
+@import '../../styles/shared/links';
+@import '../../styles/shared/typography';
 
 $min-height: control-height();
 $vertical-padding: ($min-height - line-height(body) - rem(2px)) / 2;

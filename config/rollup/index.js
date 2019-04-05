@@ -49,7 +49,6 @@ module.exports = function createRollupConfig({entry, cssPath}) {
       commonjs(),
       styles({
         output: cssPath,
-        includePaths: [styleRoot],
         generateScopedName: getNamespacedClassName,
       }),
       image({

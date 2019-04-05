@@ -1,6 +1,6 @@
-@import 'foundation';
-@import 'shared/accessibility';
-@import 'shared/typography';
+@import '../../styles/foundation';
+@import '../../styles/shared/accessibility';
+@import '../../styles/shared/typography';
 
 .hidden > .LabelWrapper {
   @include visually-hidden;

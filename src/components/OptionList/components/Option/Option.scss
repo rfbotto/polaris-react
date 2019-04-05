@@ -1,9 +1,9 @@
-@import 'foundation';
-@import 'shared/buttons';
-@import 'shared/controls';
-@import 'shared/icons';
-@import 'shared/interaction-state';
-@import 'shared/links';
+@import '../../../../styles/foundation';
+@import '../../../../styles/shared/buttons';
+@import '../../../../styles/shared/controls';
+@import '../../../../styles/shared/icons';
+@import '../../../../styles/shared/interaction-state';
+@import '../../../../styles/shared/links';
 
 $min-height: control-height();
 $control-size: rem(16px);

@@ -1,6 +1,6 @@
-@import 'foundation';
-@import 'shared/breakpoints';
-@import 'shared/controls';
+@import '../../styles/foundation';
+@import '../../styles/shared/breakpoints';
+@import '../../styles/shared/controls';
 @import './variables';
 
 $item-wrapper-loading-height: rem(64px);

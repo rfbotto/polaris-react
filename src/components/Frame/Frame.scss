@@ -1,7 +1,7 @@
-@import 'foundation';
-@import 'shared/breakpoints';
-@import 'shared/layout';
-@import 'shared/printing';
+@import '../../styles/foundation';
+@import '../../styles/shared/breakpoints';
+@import '../../styles/shared/layout';
+@import '../../styles/shared/printing';
 
 $button-size: rem(32px);
 $skip-vertical-offset: rem(10px);

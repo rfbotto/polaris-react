@@ -1,4 +1,4 @@
-@import 'foundation';
+@import '../../styles/foundation';
 
 @mixin text-container-spacing($spacing: base) {
   > *:not(:first-child) {

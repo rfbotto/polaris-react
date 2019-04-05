@@ -1,7 +1,7 @@
-@import 'foundation';
-@import 'shared/breakpoints';
-@import 'shared/interaction-state';
-@import 'shared/layout';
+@import '../../../../styles/foundation';
+@import '../../../../styles/shared/breakpoints';
+@import '../../../../styles/shared/interaction-state';
+@import '../../../../styles/shared/layout';
 @import '../../variables';
 
 @mixin action-hide {

@@ -1,9 +1,9 @@
-@import 'foundation';
-@import 'shared/buttons';
-@import 'shared/icons';
-@import 'shared/interaction-state';
-@import 'shared/links';
-@import 'shared/typography';
+@import '../../styles/foundation';
+@import '../../styles/shared/buttons';
+@import '../../styles/shared/icons';
+@import '../../styles/shared/interaction-state';
+@import '../../styles/shared/links';
+@import '../../styles/shared/typography';
 
 $item-min-height: rem(16px);
 $item-min-width: rem(50px);

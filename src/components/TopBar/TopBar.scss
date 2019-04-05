@@ -1,8 +1,8 @@
-@import 'foundation';
-@import 'shared/buttons';
-@import 'shared/breakpoints';
-@import 'shared/layout';
-@import 'shared/page';
+@import '../../styles/foundation';
+@import '../../styles/shared/buttons';
+@import '../../styles/shared/breakpoints';
+@import '../../styles/shared/layout';
+@import '../../styles/shared/page';
 @import './styles/variables';
 
 $icon-size: rem(20px);

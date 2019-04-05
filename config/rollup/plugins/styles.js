@@ -18,11 +18,7 @@ module.exports = function styles(options = {}) {
     options.include || ['**/*.css', '**/*.scss'],
     options.exclude,
   );
-  const {
-    output,
-    includePaths = [],
-    generateScopedName: userGenerateScopedName,
-  } = options;
+  const {output, generateScopedName: userGenerateScopedName} = options;
   const cssAndTokensByFile = {};
 
   const generateScopedName =
@@ -64,7 +60,7 @@ module.exports = function styles(options = {}) {
         render(
           {
             data: source,
-            includePaths: includePaths.concat(dirname(id)),
+            includePaths: [dirname(id)],
           },
           (error, result) => {
             if (error) {

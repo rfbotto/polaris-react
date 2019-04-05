@@ -1,5 +1,5 @@
-@import 'foundation';
-@import 'shared/breakpoints';
+@import '../../../../styles/foundation';
+@import '../../../../styles/shared/breakpoints';
 @import '../../styles/variables';
 
 $page-layout-when-not-partially-condensed-absolute: rem(743px);
