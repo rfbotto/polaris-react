@@ -6,7 +6,7 @@ import {PolarisContext} from '../components/types';
 import {Omit} from '../types';
 import {ThemeProviderContext} from './theme-provider';
 
-function usePolaris() {
+export function usePolaris() {
   const polaris = useContext(AppProviderContext);
 
   if (Object.keys(polaris).length < 1) {
@@ -29,5 +29,3 @@ function usePolaris() {
 
   return polarisContext;
 }
-
-export default usePolaris;

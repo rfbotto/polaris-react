@@ -2,10 +2,6 @@ import {useContext} from 'react';
 // eslint-disable-next-line shopify/strict-component-boundaries
 import {AppProviderContext} from '../components/AppProvider';
 
-function useAppBridge() {
-  const {appBridge} = useContext(AppProviderContext);
-
-  return appBridge;
+export function useAppBridge() {
+  return useContext(AppProviderContext).appBridge;
 }
-
-export default useAppBridge;

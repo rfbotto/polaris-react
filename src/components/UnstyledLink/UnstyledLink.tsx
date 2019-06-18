@@ -1,14 +1,14 @@
 import React from 'react';
 import {unstyled} from '../shared';
-import usePolaris from '../../utilities/use-polaris';
+import {usePolaris} from '../../utilities/use-polaris';
 import {UnstyledLinkProps} from '../../utilities/unstyled-link';
 
 interface Props extends UnstyledLinkProps {}
 
 export default React.memo(function UnstyledLink(props: Props) {
-  const polaris = usePolaris();
-  if (polaris && polaris.link) {
-    const LinkComponent = polaris.link.getLinkComponent();
+  const {link} = usePolaris();
+  if (link) {
+    const LinkComponent = link.getLinkComponent();
     if (LinkComponent) {
       return <LinkComponent {...unstyled.props} {...props} />;
     }

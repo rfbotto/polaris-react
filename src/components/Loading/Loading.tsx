@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useRef} from 'react';
 import {Loading as AppBridgeLoading} from '@shopify/app-bridge/actions';
 import {FrameContext} from '../Frame';
-import usePolaris from '../../utilities/use-polaris';
+import {usePolaris} from '../../utilities/use-polaris';
 
 export interface Props {}
 

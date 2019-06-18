@@ -3,7 +3,7 @@ import {createUniqueIDFactory} from '@shopify/javascript-utilities/other';
 import {Toast as AppBridgeToast} from '@shopify/app-bridge/actions';
 
 import {DEFAULT_TOAST_DURATION, FrameContext, ToastProps} from '../Frame';
-import usePolaris from '../../utilities/use-polaris';
+import {usePolaris} from '../../utilities/use-polaris';
 
 const createId = createUniqueIDFactory('Toast');
 

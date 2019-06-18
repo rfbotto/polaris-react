@@ -3,7 +3,7 @@ import isEqual from 'lodash/isEqual';
 import {mountWithAppProvider} from 'test-utilities/legacy';
 import {createPolarisContext} from '../../components';
 
-import useAppBridge from '../use-app-bridge';
+import {useAppBridge} from '../use-app-bridge';
 
 describe('useApp', () => {
   it('returns context', () => {
