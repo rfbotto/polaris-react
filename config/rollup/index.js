@@ -1,4 +1,3 @@
-const {resolve} = require('path');
 const nodeResolve = require('rollup-plugin-node-resolve');
 const babel = require('rollup-plugin-babel');
 const json = require('rollup-plugin-json');
@@ -10,10 +9,6 @@ const styles = require('./plugins/styles');
 const image = require('./plugins/image');
 
 const getNamespacedClassName = require('./namespaced-classname');
-
-const project = resolve(__dirname, '../..');
-const buildRoot = resolve(project, './build-intermediate');
-const styleRoot = resolve(buildRoot, './styles');
 
 const externalPackages = [
   ...Object.keys(dependencies),
