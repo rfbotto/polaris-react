@@ -1,3 +1,7 @@
+@import '../foundation/utilities';
+@import '../foundation/layout';
+@import '../foundation/z-index';
+
 $page-max-width: layout-width(primary, max) + layout-width(secondary, max) +
   layout-width(inner-spacing);
 $frame-with-nav-max-width: layout-width(nav) + $page-max-width;

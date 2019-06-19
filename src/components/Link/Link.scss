@@ -1,5 +1,6 @@
 @import '../../styles/foundation';
 @import '../../styles/shared/links';
+@import '../../styles/shared/icons';
 
 .Link {
   @include recolor-icon(currentColor);

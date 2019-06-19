@@ -1,3 +1,7 @@
+@import '../../../../styles/foundation';
+@import '../../../../styles/shared/breakpoints';
+@import '../../../../styles/shared/typography';
+
 $stacking-order: (
   output: 10,
   input: 20,
