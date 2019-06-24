@@ -1,5 +1,5 @@
 import {LinkLikeComponent} from '../../utilities/unstyled-link';
-import {Theme} from '../../utilities/theme-provider';
+import {Theme} from '../../utilities/theme';
 import {TranslationDictionary} from '../../utilities/intl';
 
 export interface AppProviderProps {

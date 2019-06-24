@@ -1,5 +1,5 @@
 import React from 'react';
-import ThemeProvider from '../ThemeProvider';
+import {ThemeProvider} from '../../utilities/theme';
 import {Intl, IntlContext} from '../../utilities/intl';
 import {
   ScrollLockManager,

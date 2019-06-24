@@ -10,7 +10,7 @@ import {
 import {
   ThemeProviderContextType,
   ThemeProviderContext,
-} from '../../../../utilities/theme-provider';
+} from '../../../../utilities/theme';
 import {PolarisContext} from '../../../types';
 import AppProviderContext from '../../context';
 import StickyManager from '../StickyManager';

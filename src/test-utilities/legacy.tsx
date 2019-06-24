@@ -19,7 +19,7 @@ import {
   createThemeContext,
   ThemeProviderContextType,
   ThemeProviderContext,
-} from '../utilities/theme-provider';
+} from '../utilities/theme';
 import {
   ScrollLockManager,
   ScrollLockManagerContext,

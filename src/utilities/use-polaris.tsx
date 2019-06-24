@@ -4,7 +4,7 @@ import {AppProviderContext} from '../components/AppProvider';
 import {PolarisContext} from '../components/types';
 /* eslint-enable shopify/strict-component-boundaries */
 import {Omit} from '../types';
-import {ThemeProviderContext} from './theme-provider';
+import {ThemeProviderContext} from './theme';
 
 export function usePolaris() {
   const polaris = useContext(AppProviderContext);

@@ -1,5 +1,5 @@
 import {Intl} from '../utilities/intl';
-import {ThemeProviderContextType} from '../utilities/theme-provider';
+import {ThemeProviderContextType} from '../utilities/theme';
 import {ScrollLockManager} from '../utilities/scroll-lock-manager';
 import {AppProviderContextType} from './AppProvider';
 

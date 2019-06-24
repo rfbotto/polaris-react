@@ -1,17 +1,15 @@
 import React from 'react';
 import isEqual from 'lodash/isEqual';
-import {
-  Theme,
-  ThemeProviderContext,
-  setColors,
-} from '../../utilities/theme-provider';
+import {ThemeProviderContext} from './context';
+import {Theme} from './types';
+import {setColors} from './utils';
 
-export interface State {
+interface State {
   theme: Theme;
   colors: string[][] | undefined;
 }
 
-export interface Props {
+interface Props {
   /** Custom logos and colors provided to select components */
   theme: Theme;
   /** The content to display */
@@ -24,7 +22,7 @@ const defaultTheme = {
   '--top-bar-background-lighter': '#1d9ba4',
 };
 
-export default class ThemeProvider extends React.Component<Props, State> {
+export class ThemeProvider extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
