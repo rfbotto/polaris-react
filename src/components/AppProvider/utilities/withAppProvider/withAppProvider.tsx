@@ -1,7 +1,7 @@
 import React from 'react';
 import hoistStatics from 'hoist-non-react-statics';
 import {ClientApplication} from '@shopify/app-bridge';
-import {Intl, IntlContext} from '../../../../utilities/intl';
+import {I18n, I18nContext} from '../../../../utilities/i18n';
 import {Link} from '../../../../utilities/unstyled-link';
 import {
   ScrollLockManager,
@@ -21,7 +21,7 @@ export type ReactComponent<P, C> =
 
 export interface WithAppProviderProps {
   polaris: {
-    intl: Intl;
+    intl: I18n;
     link: Link;
     stickyManager: StickyManager;
     scrollLockManager: ScrollLockManager | null;
@@ -78,7 +78,7 @@ export default function withAppProvider<OwnProps>({
                 <ThemeProviderContext.Consumer>
                   {(polarisTheme) => {
                     return (
-                      <IntlContext.Consumer>
+                      <I18nContext.Consumer>
                         {(intl) => {
                           return (
                             <ScrollLockManagerContext.Consumer>
@@ -106,7 +106,7 @@ export default function withAppProvider<OwnProps>({
                             </ScrollLockManagerContext.Consumer>
                           );
                         }}
-                      </IntlContext.Consumer>
+                      </I18nContext.Consumer>
                     );
                   }}
                 </ThemeProviderContext.Consumer>

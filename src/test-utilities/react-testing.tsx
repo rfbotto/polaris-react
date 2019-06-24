@@ -16,7 +16,7 @@ import {
   ScrollLockManager,
   ScrollLockManagerContext,
 } from '../utilities/scroll-lock-manager';
-import {Intl, IntlContext, TranslationDictionary} from '../utilities/intl';
+import {I18n, I18nContext, TranslationDictionary} from '../utilities/i18n';
 import translations from '../../locales/en.json';
 import {PolarisContext} from '../components/types';
 import {DeepPartial, Omit} from '../types';
@@ -33,7 +33,7 @@ interface SimpleProviders {
 }
 type ReturnedContext = ComplexProviders &
   Omit<SimpleProviders, 'intl'> & {
-    intl: Intl;
+    intl: I18n;
   };
 type Options = DeepPartial<ComplexProviders> & Partial<SimpleProviders>;
 type Context = ReturnedContext;
@@ -59,7 +59,7 @@ function TestProvider({
 
   return (
     <AppProviderContext.Provider value={polaris}>
-      <IntlContext.Provider value={intl}>
+      <I18nContext.Provider value={intl}>
         <ScrollLockManagerContext.Provider value={scrollLockManager}>
           <ThemeProviderContext.Provider value={themeProvider}>
             <FrameContext.Provider value={frame}>
@@ -67,7 +67,7 @@ function TestProvider({
             </FrameContext.Provider>
           </ThemeProviderContext.Provider>
         </ScrollLockManagerContext.Provider>
-      </IntlContext.Provider>
+      </I18nContext.Provider>
     </AppProviderContext.Provider>
   );
 }
@@ -81,7 +81,7 @@ export const mountWithContext = createMount<Options, Context>({
 
     const intlTranslations =
       (intl && merge(translations, intl)) || translations;
-    const intlContext = new Intl(intlTranslations);
+    const intlContext = new I18n(intlTranslations);
 
     const scrollLockManagerContext =
       scrollLockManager || new ScrollLockManager();

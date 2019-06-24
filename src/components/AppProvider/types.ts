@@ -1,6 +1,6 @@
 import {LinkLikeComponent} from '../../utilities/unstyled-link';
 import {Theme} from '../../utilities/theme';
-import {TranslationDictionary} from '../../utilities/intl';
+import {TranslationDictionary} from '../../utilities/i18n';
 
 export interface AppProviderProps {
   /** A locale object or array of locale objects that overrides default translations */

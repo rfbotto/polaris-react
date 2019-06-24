@@ -1,10 +1,10 @@
-import {Intl} from '../utilities/intl';
+import {I18n} from '../utilities/i18n';
 import {ThemeProviderContextType} from '../utilities/theme';
 import {ScrollLockManager} from '../utilities/scroll-lock-manager';
 import {AppProviderContextType} from './AppProvider';
 
 export interface PolarisContext extends AppProviderContextType {
-  intl: Intl;
+  intl: I18n;
   scrollLockManager: ScrollLockManager | null;
   theme: ThemeProviderContextType;
 }

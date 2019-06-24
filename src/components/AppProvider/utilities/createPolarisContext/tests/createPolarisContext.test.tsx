@@ -3,8 +3,8 @@ import StickyManager from '../../StickyManager';
 import {ScrollLockManager} from '../../../../../utilities/scroll-lock-manager';
 import createPolarisContext from '../createPolarisContext';
 
-jest.mock('../../../../../utilities/intl', () => ({
-  Intl: jest.fn(),
+jest.mock('../../../../../utilities/i18n', () => ({
+  I18n: jest.fn(),
   __esModule: true,
 }));
 
@@ -14,15 +14,15 @@ jest.mock('../../../../../utilities/unstyled-link', () => ({
 }));
 
 describe('createPolarisContext()', () => {
-  const Intl: jest.Mock<{}> = require.requireMock(
-    '../../../../../utilities/intl',
-  ).Intl;
+  const I18n: jest.Mock<{}> = require.requireMock(
+    '../../../../../utilities/i18n',
+  ).I18n;
   const Link: jest.Mock<{}> = require.requireMock(
     '../../../../../utilities/unstyled-link',
   ).Link;
 
   afterEach(() => {
-    Intl.mockReset();
+    I18n.mockReset();
     Link.mockReset();
   });
 
@@ -30,7 +30,7 @@ describe('createPolarisContext()', () => {
     const context = createPolarisContext();
 
     expect(context).toMatchObject({
-      intl: expect.any(Intl),
+      intl: expect.any(I18n),
       link: expect.any(Link),
       stickyManager: expect.any(StickyManager),
       scrollLockManager: expect.any(ScrollLockManager),
@@ -67,12 +67,12 @@ describe('createPolarisContext()', () => {
 
     const context = createPolarisContext({
       appProvider: appProviderContext,
-      i18n: i18nContext,
+      intl: i18nContext,
       themeProvider: themeContext,
     });
 
     expect(context).toStrictEqual({
-      intl: new Intl(i18nContext),
+      intl: new I18n(i18nContext),
       link: new Link(CustomLinkComponent),
       stickyManager,
       scrollLockManager,

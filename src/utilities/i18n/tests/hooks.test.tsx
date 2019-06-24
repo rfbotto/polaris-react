@@ -1,12 +1,12 @@
 import React from 'react';
 import {mountWithContext} from 'test-utilities';
 
-import {useIntl} from '../hooks';
+import {useI18n} from '../hooks';
 
-describe('useIntl', () => {
+describe('useI18n', () => {
   it('returns context', () => {
     function Component() {
-      return useIntl() ? <div /> : null;
+      return useI18n() ? <div /> : null;
     }
 
     const component = mountWithContext(<Component />, {});

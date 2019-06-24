@@ -16,7 +16,7 @@ import Badge from '../../../Badge';
 import Icon, {Props as IconProps} from '../../../Icon';
 import Indicator from '../../../Indicator';
 import UnstyledLink from '../../../UnstyledLink';
-import {useIntl} from '../../../../utilities/intl';
+import {useI18n} from '../../../../utilities/i18n';
 
 import styles from '../../Navigation.scss';
 
@@ -86,7 +86,7 @@ export default function Item({
   matchPaths,
   excludePaths,
 }: Props) {
-  const intl = useIntl();
+  const intl = useI18n();
   const {location, onNavigationDismiss} = useContext(NavigationContext);
   const [expanded, setExpanded] = useState(false);
 

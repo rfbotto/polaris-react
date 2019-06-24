@@ -14,7 +14,7 @@ import TextStyle from '../../../TextStyle';
 import {fileUpload, imageUpload} from '../../images';
 
 import DropZoneContext from '../../context';
-import {useIntl} from '../../../../utilities/intl';
+import {useI18n} from '../../../../utilities/i18n';
 
 import styles from './FileUpload.scss';
 
@@ -24,7 +24,7 @@ export interface Props {
 }
 
 function FileUpload(props: Props) {
-  const {translate} = useIntl();
+  const {translate} = useI18n();
   const {size, type} = useContext(DropZoneContext);
   const suffix = capitalize(type);
   const {

@@ -1,6 +1,6 @@
 import React from 'react';
 import {ThemeProvider} from '../../utilities/theme';
-import {Intl, IntlContext} from '../../utilities/intl';
+import {I18n, I18nContext} from '../../utilities/i18n';
 import {
   ScrollLockManager,
   ScrollLockManagerContext,
@@ -11,7 +11,7 @@ import {AppProviderProps} from './types';
 
 interface State {
   context: AppProviderContextType;
-  intl: Intl;
+  intl: I18n;
 }
 
 // The script in the styleguide that generates the Props Explorer data expects
@@ -35,7 +35,7 @@ export default class AppProvider extends React.Component<Props, State> {
         ...rest,
         stickyManager: this.stickyManager,
       }),
-      intl: new Intl(i18n),
+      intl: new I18n(i18n),
     };
   }
 
@@ -73,7 +73,7 @@ export default class AppProvider extends React.Component<Props, State> {
         forceRedirect,
         stickyManager: this.stickyManager,
       }),
-      intl: new Intl(i18n),
+      intl: new I18n(i18n),
     });
   }
 
@@ -86,13 +86,13 @@ export default class AppProvider extends React.Component<Props, State> {
 
     return (
       <AppProviderContext.Provider value={appProviderContext}>
-        <IntlContext.Provider value={intl}>
+        <I18nContext.Provider value={intl}>
           <ScrollLockManagerContext.Provider value={this.scrollLockManager}>
             <ThemeProvider theme={theme}>
               {React.Children.only(children)}
             </ThemeProvider>
           </ScrollLockManagerContext.Provider>
-        </IntlContext.Provider>
+        </I18nContext.Provider>
       </AppProviderContext.Provider>
     );
   }

@@ -9,7 +9,7 @@ import {Key} from '../../types';
 import {layer, overlay, Duration} from '../shared';
 import {FrameContext} from '../Frame';
 import {withAppProvider} from '../AppProvider';
-import {useIntl} from '../../utilities/intl';
+import {useI18n} from '../../utilities/i18n';
 
 import Backdrop from '../Backdrop';
 import TrapFocus from '../TrapFocus';
@@ -49,7 +49,7 @@ export interface State {
 export function Sheet({children, open, onClose}: Props) {
   const [mobile, setMobile] = useState(false);
   const frame = useContext(FrameContext);
-  const intl = useIntl();
+  const intl = useI18n();
 
   const handleResize = useCallback(
     debounce(

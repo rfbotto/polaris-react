@@ -1,7 +1,7 @@
 import {ReactWrapper, CommonWrapper, mount} from 'enzyme';
 import React from 'react';
 import {noop} from '@shopify/javascript-utilities/other';
-import {Intl, IntlContext, TranslationDictionary} from '../utilities/intl';
+import {I18n, I18nContext, TranslationDictionary} from '../utilities/i18n';
 import {get} from '../utilities/get';
 import merge from '../utilities/merge';
 import {PolarisContext} from '../components/types';
@@ -87,7 +87,7 @@ function updateRoot(wrapper: AnyWrapper) {
 
 type AppContext = {
   polaris: PolarisContext;
-  intl: Intl;
+  intl: I18n;
   scrollLockManager: ScrollLockManager;
   themeProvider: ThemeProviderContextType;
   frame: FrameContextType;
@@ -119,7 +119,7 @@ export function mountWithAppProvider<P>(
 
   const intlTranslations =
     (ctx.intl && merge(translations, ctx.intl)) || translations;
-  const intl = new Intl(intlTranslations);
+  const intl = new I18n(intlTranslations);
 
   const scrollLockManager = ctx.scrollLockManager || new ScrollLockManager();
 
@@ -168,7 +168,7 @@ export function polarisContextReactWrapper<P, S>(
 
     return (
       <AppProviderContext.Provider value={app.polaris}>
-        <IntlContext.Provider value={app.intl}>
+        <I18nContext.Provider value={app.intl}>
           <ScrollLockManagerContext.Provider value={app.scrollLockManager}>
             <ThemeProviderContext.Provider value={app.themeProvider}>
               <FrameContext.Provider value={app.frame}>
@@ -176,7 +176,7 @@ export function polarisContextReactWrapper<P, S>(
               </FrameContext.Provider>
             </ThemeProviderContext.Provider>
           </ScrollLockManagerContext.Provider>
-        </IntlContext.Provider>
+        </I18nContext.Provider>
       </AppProviderContext.Provider>
     );
   }
