@@ -259,4 +259,4 @@ export type DeepPartial<T> = {
       : DeepPartial<T[P]>
 };
 
-export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+export type Discard<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;

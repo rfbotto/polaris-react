@@ -19,7 +19,7 @@ import {
 import {I18n, I18nContext, TranslationDictionary} from '../utilities/i18n';
 import translations from '../../locales/en.json';
 import {PolarisContext} from '../components/types';
-import {DeepPartial, Omit} from '../types';
+import {DeepPartial, Discard} from '../types';
 import merge from '../utilities/merge';
 
 interface ComplexProviders {
@@ -32,7 +32,7 @@ interface SimpleProviders {
   scrollLockManager: ScrollLockManager;
 }
 type ReturnedContext = ComplexProviders &
-  Omit<SimpleProviders, 'intl'> & {
+  Discard<SimpleProviders, 'intl'> & {
     intl: I18n;
   };
 type Options = DeepPartial<ComplexProviders> & Partial<SimpleProviders>;

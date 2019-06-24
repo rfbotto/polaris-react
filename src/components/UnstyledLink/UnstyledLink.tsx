@@ -3,6 +3,8 @@ import {unstyled} from '../shared';
 import {usePolaris} from '../../utilities/use-polaris';
 import {UnstyledLinkProps} from '../../utilities/unstyled-link';
 
+// Every components needs a `Props` interface
+// for our styleguide to build the props explorer
 interface Props extends UnstyledLinkProps {}
 
 export default React.memo(function UnstyledLink(props: Props) {

@@ -67,7 +67,7 @@ describe('createPolarisContext()', () => {
 
     const context = createPolarisContext({
       appProvider: appProviderContext,
-      intl: i18nContext,
+      i18n: i18nContext,
       themeProvider: themeContext,
     });
 

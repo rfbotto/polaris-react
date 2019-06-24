@@ -3,7 +3,7 @@ import {useContext} from 'react';
 import {AppProviderContext} from '../components/AppProvider';
 import {PolarisContext} from '../components/types';
 /* eslint-enable shopify/strict-component-boundaries */
-import {Omit} from '../types';
+import {Discard} from '../types';
 import {ThemeProviderContext} from './theme';
 
 export function usePolaris() {
@@ -22,7 +22,10 @@ export function usePolaris() {
   // Intl/ScrollLockManager exist on PolarisContent for legacy reasons.
   // This hook will be removed when we finished moving
   // all our utilities so I feel we don't need a new type.
-  const polarisContext: Omit<PolarisContext, 'intl' | 'scrollLockManager'> = {
+  const polarisContext: Discard<
+    PolarisContext,
+    'intl' | 'scrollLockManager'
+  > = {
     ...polaris,
     theme: polarisTheme,
   };

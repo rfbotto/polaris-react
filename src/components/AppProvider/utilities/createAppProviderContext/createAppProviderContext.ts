@@ -8,9 +8,9 @@ import {AppProviderProps} from '../../types';
 import StickyManager from '../StickyManager';
 import {Link} from '../../../../utilities/unstyled-link';
 import {polarisVersion} from '../../../../configure';
-import {Omit} from '../../../../types';
+import {Discard} from '../../../../types';
 
-type AppProviderOptions = Omit<AppProviderProps, 'i18n'>;
+type AppProviderOptions = Discard<AppProviderProps, 'i18n'>;
 export interface CreateAppProviderContext extends AppProviderOptions {
   stickyManager?: StickyManager;
 }
