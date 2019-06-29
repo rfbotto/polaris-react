@@ -6,3 +6,9 @@ export interface PolarisContext
     ThemeProviderContext {}
 
 export type TransitionStatus = 'entering' | 'entered' | 'exiting' | 'exited';
+
+export {
+  SelectedItems,
+  ResourceListContext,
+  SELECT_ALL_ITEMS,
+} from './ResourceList/types';

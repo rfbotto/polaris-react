@@ -4,25 +4,22 @@ import {classNames} from '@shopify/css-utilities';
 import {createUniqueIDFactory} from '@shopify/javascript-utilities/other';
 import compose from '@shopify/react-compose';
 import isEqual from 'lodash/isEqual';
-import {DisableableAction, WithContextTypes} from '../../../../types';
-import ActionList from '../../../ActionList';
-import Popover from '../../../Popover';
-import {Props as AvatarProps} from '../../../Avatar';
-import UnstyledLink from '../../../UnstyledLink';
-import {Props as ThumbnailProps} from '../../../Thumbnail';
-import ButtonGroup from '../../../ButtonGroup';
-import Checkbox from '../../../Checkbox';
-import Button, {buttonsFrom} from '../../../Button';
-import {withAppProvider, WithAppProviderProps} from '../../../AppProvider';
+import {DisableableAction, WithContextTypes} from '../../types';
+import ActionList from '../ActionList';
+import Popover from '../Popover';
+import {Props as AvatarProps} from '../Avatar';
+import UnstyledLink from '../UnstyledLink';
+import {Props as ThumbnailProps} from '../Thumbnail';
+import ButtonGroup from '../ButtonGroup';
+import Checkbox from '../Checkbox';
+import Button, {buttonsFrom} from '../Button';
+import {withAppProvider, WithAppProviderProps} from '../AppProvider';
 
-import {
-  ResourceListContext,
-  SELECT_ALL_ITEMS,
-  SelectedItems,
-} from '../../types';
-import withContext from '../../../WithContext';
-import {Consumer} from '../Context';
-import styles from './Item.scss';
+// eslint-disable-next-line shopify/strict-component-boundaries
+import {Consumer} from '../ResourceList/components/Context';
+import {ResourceListContext, SELECT_ALL_ITEMS, SelectedItems} from '../types';
+import withContext from '../WithContext';
+import styles from './ResourceItem.scss';
 
 export type ExceptionStatus = 'neutral' | 'warning' | 'critical';
 export type MediaSize = 'small' | 'medium' | 'large';
@@ -37,10 +34,19 @@ export interface BaseProps {
   ariaExpanded?: boolean;
   /** Unique identifier for the item */
   id: string;
+  /** Content for the media area at the left of the item, usually an Avatar or Thumbnail */
   media?: React.ReactElement<AvatarProps | ThumbnailProps>;
+  /** Makes the shortcut actions always visible */
   persistActions?: boolean;
+  /** 1 or 2 shortcut actions; must be available on the page linked to by \`url\` */
   shortcutActions?: DisableableAction[];
+  /** The order the item is rendered */
   sortOrder?: number;
+  /** URL for the resource’s details page (required unless \`onClick\` is provided) */
+  url?: string;
+  /** Callback when clicked (required if \`url\` is omitted) */
+  onClick?(id?: string): void;
+  /** Content for the details area */
   children?: React.ReactNode;
 }
 
@@ -72,7 +78,7 @@ type CombinedProps =
 const getUniqueCheckboxID = createUniqueIDFactory('ResourceListItemCheckbox');
 const getUniqueOverlayID = createUniqueIDFactory('ResourceListItemOverlay');
 
-class Item extends React.Component<CombinedProps, State> {
+class ResourceItem extends React.Component<CombinedProps, State> {
   static getDerivedStateFromProps(nextProps: CombinedProps, prevState: State) {
     const selected = isSelected(nextProps.id, nextProps.context.selectedItems);
 
@@ -184,7 +190,7 @@ class Item extends React.Component<CombinedProps, State> {
     }
 
     const className = classNames(
-      styles.Item,
+      styles.ResourceItem,
       focused && styles.focused,
       selectable && styles.selectable,
       selected && styles.selected,
@@ -422,4 +428,4 @@ function isSelected(id: string, selectedItems?: SelectedItems) {
 export default compose<Props>(
   withContext<Props, WithAppProviderProps, ResourceListContext>(Consumer),
   withAppProvider<Props>(),
-)(Item);
+)(ResourceItem);

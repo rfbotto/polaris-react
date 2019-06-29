@@ -1,4 +1,4 @@
-@import '../../variables';
+@import '../ResourceList/variables';
 
 @mixin action-hide {
   clip: rect(1px, 1px, 1px, 1px);
@@ -16,7 +16,7 @@
   display: flex;
 }
 
-.Item {
+.ResourceItem {
   position: relative;
   outline: none;
   cursor: pointer;

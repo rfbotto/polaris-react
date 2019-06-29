@@ -7,10 +7,11 @@ import {
   Thumbnail,
   UnstyledLink,
 } from 'components';
-import {Provider} from '../../Context';
-import Item from '../Item';
+// eslint-disable-next-line shopify/strict-component-boundaries
+import {Provider} from '../../ResourceList/components/Context';
+import ResourceItem from '../ResourceItem';
 
-describe('<Item />', () => {
+describe('<ResourceItem />', () => {
   let spy: jest.SpyInstance;
 
   beforeEach(() => {
@@ -69,7 +70,7 @@ describe('<Item />', () => {
     it('is used on the <UnstyledLink /> for the aria-label attribute', () => {
       const item = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item
+          <ResourceItem
             accessibilityLabel={accessibilityLabel}
             id={itemId}
             url="https://shopify.com"
@@ -87,7 +88,11 @@ describe('<Item />', () => {
     it('does not render an <UnstyledLink /> by default', () => {
       const element = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item id="itemId" onClick={noop} accessibilityLabel={ariaLabel} />
+          <ResourceItem
+            id="itemId"
+            onClick={noop}
+            accessibilityLabel={ariaLabel}
+          />
         </Provider>,
       );
 
@@ -97,7 +102,7 @@ describe('<Item />', () => {
     it('renders an <UnstyledLink />', () => {
       const element = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item id="itemId" url={url} accessibilityLabel={ariaLabel} />
+          <ResourceItem id="itemId" url={url} accessibilityLabel={ariaLabel} />
         </Provider>,
       );
 
@@ -107,7 +112,7 @@ describe('<Item />', () => {
     it('renders an <UnstyledLink /> with url', () => {
       const element = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item id="itemId" url={url} accessibilityLabel={ariaLabel} />
+          <ResourceItem id="itemId" url={url} accessibilityLabel={ariaLabel} />
         </Provider>,
       );
 
@@ -117,7 +122,7 @@ describe('<Item />', () => {
     it('renders an <UnstyledLink /> with an aria-label of ariaLabel', () => {
       const element = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item id="itemId" url={url} accessibilityLabel={ariaLabel} />
+          <ResourceItem id="itemId" url={url} accessibilityLabel={ariaLabel} />
         </Provider>,
       );
 
@@ -127,7 +132,7 @@ describe('<Item />', () => {
     it('adds a data-href to the wrapper element', () => {
       const element = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item id="itemId" url={url} />
+          <ResourceItem id="itemId" url={url} />
         </Provider>,
       );
 
@@ -139,7 +144,7 @@ describe('<Item />', () => {
     it('is used on the content node and for the description of a link', () => {
       const item = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item
+          <ResourceItem
             id={itemId}
             url="https://shopify.com"
             accessibilityLabel={ariaLabel}
@@ -157,7 +162,11 @@ describe('<Item />', () => {
       const onClick = jest.fn();
       const wrapper = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item id={itemId} onClick={onClick} accessibilityLabel={ariaLabel} />
+          <ResourceItem
+            id={itemId}
+            onClick={onClick}
+            accessibilityLabel={ariaLabel}
+          />
         </Provider>,
       );
 
@@ -169,7 +178,7 @@ describe('<Item />', () => {
       const onClick = jest.fn();
       const wrapper = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item
+          <ResourceItem
             id={itemId}
             onClick={onClick}
             url={url}
@@ -185,7 +194,7 @@ describe('<Item />', () => {
     it('calls window.open on metaKey + click', () => {
       const wrapper = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item id={itemId} url={url} accessibilityLabel={ariaLabel} />
+          <ResourceItem id={itemId} url={url} accessibilityLabel={ariaLabel} />
         </Provider>,
       );
       const item = findByTestID(wrapper, 'Item-Wrapper');
@@ -200,7 +209,7 @@ describe('<Item />', () => {
       const onClick = jest.fn();
       const wrapper = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item id={itemId} url="#" onClick={onClick} />
+          <ResourceItem id={itemId} url="#" onClick={onClick} />
         </Provider>,
       );
 
@@ -215,7 +224,7 @@ describe('<Item />', () => {
       const onClick = jest.fn();
       const wrapper = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item id={itemId} url="#" onClick={onClick} />
+          <ResourceItem id={itemId} url="#" onClick={onClick} />
         </Provider>,
       );
 
@@ -230,7 +239,7 @@ describe('<Item />', () => {
       const onClick = jest.fn();
       const wrapper = mountWithAppProvider(
         <Provider value={mockSelectModeContext}>
-          <Item id={itemId} onClick={onClick} />
+          <ResourceItem id={itemId} onClick={onClick} />
         </Provider>,
       );
 
@@ -244,7 +253,7 @@ describe('<Item />', () => {
     it('calls window.open on ctrlKey + click', () => {
       const wrapper = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item id={itemId} url={url} accessibilityLabel={ariaLabel} />
+          <ResourceItem id={itemId} url={url} accessibilityLabel={ariaLabel} />
         </Provider>,
       );
       const item = findByTestID(wrapper, 'Item-Wrapper');
@@ -261,7 +270,7 @@ describe('<Item />', () => {
       const onClick = jest.fn();
       const wrapper = mountWithAppProvider(
         <Provider value={mockSelectableContext}>
-          <Item id={itemId} onClick={onClick} />
+          <ResourceItem id={itemId} onClick={onClick} />
         </Provider>,
       );
 
@@ -273,7 +282,7 @@ describe('<Item />', () => {
       const sortOrder = 0;
       const wrapper = mountWithAppProvider(
         <Provider value={mockSelectableContext}>
-          <Item id={itemId} url={url} sortOrder={sortOrder} />
+          <ResourceItem id={itemId} url={url} sortOrder={sortOrder} />
         </Provider>,
       );
 
@@ -294,7 +303,11 @@ describe('<Item />', () => {
       const onClick = jest.fn();
       const wrapper = mountWithAppProvider(
         <Provider value={mockSelectModeContext}>
-          <Item id={itemId} onClick={onClick} accessibilityLabel={ariaLabel} />
+          <ResourceItem
+            id={itemId}
+            onClick={onClick}
+            accessibilityLabel={ariaLabel}
+          />
         </Provider>,
       );
 
@@ -307,7 +320,7 @@ describe('<Item />', () => {
       const sortOrder = 0;
       const wrapper = mountWithAppProvider(
         <Provider value={mockSelectModeContext}>
-          <Item
+          <ResourceItem
             id={itemId}
             url={url}
             onClick={onClick}
@@ -331,7 +344,7 @@ describe('<Item />', () => {
     it('renders a checked Checkbox if the item is in the selectedItems context', () => {
       const wrapper = mountWithAppProvider(
         <Provider value={mockSelectableContext}>
-          <Item id={selectedItemId} url={url} />
+          <ResourceItem id={selectedItemId} url={url} />
         </Provider>,
       );
       expect(wrapper.find(Checkbox).props().checked).toBe(true);
@@ -340,7 +353,7 @@ describe('<Item />', () => {
     it('does not call window.open when clicking the item with metaKey', () => {
       const wrapper = mountWithAppProvider(
         <Provider value={mockSelectModeContext}>
-          <Item id={selectedItemId} url={url} />
+          <ResourceItem id={selectedItemId} url={url} />
         </Provider>,
       );
       findByTestID(wrapper, 'Item-Wrapper').simulate('click', {
@@ -352,7 +365,7 @@ describe('<Item />', () => {
     it('does not call window.open when clicking the item with ctrlKey', () => {
       const wrapper = mountWithAppProvider(
         <Provider value={mockSelectModeContext}>
-          <Item id={selectedItemId} url={url} />
+          <ResourceItem id={selectedItemId} url={url} />
         </Provider>,
       );
       findByTestID(wrapper, 'Item-Wrapper').simulate('click', {
@@ -366,7 +379,7 @@ describe('<Item />', () => {
     it('does not include media if not provided', () => {
       const wrapper = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item id={itemId} url={url} />
+          <ResourceItem id={itemId} url={url} />
         </Provider>,
       );
       expect(findByTestID(wrapper, 'Media').exists()).toBe(false);
@@ -375,7 +388,7 @@ describe('<Item />', () => {
     it('renders a disabled checked Checkbox if loading context is true', () => {
       const wrapper = mountWithAppProvider(
         <Provider value={mockLoadingContext}>
-          <Item id={selectedItemId} url={url} />
+          <ResourceItem id={selectedItemId} url={url} />
         </Provider>,
       );
       expect(wrapper.find(Checkbox).prop('disabled')).toBe(true);
@@ -384,7 +397,7 @@ describe('<Item />', () => {
     it('includes an <Avatar /> if one is provided', () => {
       const wrapper = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item id={itemId} url={url} media={<Avatar customer />} />
+          <ResourceItem id={itemId} url={url} media={<Avatar customer />} />
         </Provider>,
       );
       expect(
@@ -397,7 +410,7 @@ describe('<Item />', () => {
     it('includes a <Thumbnail /> if one is provided', () => {
       const wrapper = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item
+          <ResourceItem
             id={itemId}
             url={url}
             media={<Thumbnail source="source" alt="alt" />}
@@ -416,7 +429,7 @@ describe('<Item />', () => {
     it('does not render shortcut actions if none are provided', () => {
       const wrapper = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item id={itemId} url={url} />
+          <ResourceItem id={itemId} url={url} />
         </Provider>,
       );
       expect(findByTestID(wrapper, 'ShortcutActions').exists()).toBe(false);
@@ -425,7 +438,11 @@ describe('<Item />', () => {
     it('renders shortcut actions when some are provided', () => {
       const wrapper = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item id={itemId} url={url} shortcutActions={[{content: 'action'}]} />
+          <ResourceItem
+            id={itemId}
+            url={url}
+            shortcutActions={[{content: 'action'}]}
+          />
         </Provider>,
       );
       expect(findByTestID(wrapper, 'ShortcutActions').exists()).toBe(true);
@@ -434,7 +451,7 @@ describe('<Item />', () => {
     it('renders persistent shortcut actions if persistActions is true', () => {
       const wrapper = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item
+          <ResourceItem
             id={itemId}
             url={url}
             shortcutActions={[{content: 'action'}]}
@@ -448,7 +465,7 @@ describe('<Item />', () => {
     it('does not render while loading', () => {
       const wrapper = mountWithAppProvider(
         <Provider value={{...mockLoadingContext}}>
-          <Item
+          <ResourceItem
             id={itemId}
             url={url}
             shortcutActions={[{content: 'action'}]}
@@ -464,7 +481,7 @@ describe('<Item />', () => {
     it('renders with a tab index of -1 when loading is true', () => {
       const wrapper = mountWithAppProvider(
         <Provider value={mockLoadingContext}>
-          <Item
+          <ResourceItem
             id={itemId}
             url={url}
             shortcutActions={[{content: 'action'}]}
@@ -478,7 +495,7 @@ describe('<Item />', () => {
     it('renders with a tab index of 0 when loading is false', () => {
       const wrapper = mountWithAppProvider(
         <Provider value={mockDefaultContext}>
-          <Item
+          <ResourceItem
             id={itemId}
             url={url}
             shortcutActions={[{content: 'action'}]}

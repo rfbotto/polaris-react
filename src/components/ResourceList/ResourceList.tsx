@@ -12,13 +12,13 @@ import Spinner from '../Spinner';
 import {withAppProvider, WithAppProviderProps} from '../AppProvider';
 import Select, {SelectOption} from '../Select';
 import EmptySearchResult from '../EmptySearchResult';
+import ResourceItem from '../ResourceItem';
 
 import {
   BulkActions,
   BulkActionsProps,
   CheckableButton,
   FilterControl,
-  Item,
   Provider,
 } from './components';
 
@@ -84,7 +84,7 @@ type CombinedProps = Props & WithAppProviderProps;
 const getUniqueID = createUniqueIDFactory('Select');
 
 class ResourceList extends React.Component<CombinedProps, State> {
-  static Item: typeof Item = Item;
+  static Item: typeof ResourceItem = ResourceItem;
   static FilterControl: typeof FilterControl = FilterControl;
 
   private defaultResourceName: {singular: string; plural: string};

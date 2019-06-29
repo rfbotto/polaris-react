@@ -124,6 +124,8 @@ export {
   Props as ExceptionListProps,
 } from './ExceptionList';
 
+export {default as Filters, Props as FiltersProps} from './Filters';
+
 export {default as Focus, Props as FocusProps} from './Focus';
 
 export {default as TrapFocus, Props as TrapFocusProps} from './TrapFocus';
@@ -168,8 +170,6 @@ export {default as Link, Props as LinkProps} from './Link';
 
 export {default as List, Props as ListProps} from './List';
 
-export {default as Filters, Props as FiltersProps} from './Filters';
-
 export {default as Loading, Props as LoadingProps} from './Loading';
 
 export {default as Modal, Props as ModalProps} from './Modal';
@@ -202,6 +202,11 @@ export {default as Portal, Props as PortalProps} from './Portal';
 export {default as RadioButton, Props as RadioButtonProps} from './RadioButton';
 
 export {default as RangeSlider, RangeSliderProps} from './RangeSlider';
+
+export {
+  default as ResourceItem,
+  Props as ResourceItemProps,
+} from './ResourceItem';
 
 export {
   default as ResourceList,
