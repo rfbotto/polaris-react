@@ -33,7 +33,16 @@ type CombinedProps = Props &
   WithAppProviderProps &
   WithContextTypes<ResourceListContext>;
 
+/** @deprecated Use <Filters /> instead. */
 class FilterControl extends React.Component<CombinedProps> {
+  constructor(props: CombinedProps) {
+    super(props);
+    // eslint-disable-next-line no-console
+    console.warn(
+      'Deprecation: <FilterControl /> is deprecated. Use <Filters /> instead.',
+    );
+  }
+
   render() {
     const {
       searchValue,

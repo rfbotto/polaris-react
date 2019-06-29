@@ -27,12 +27,6 @@ keywords:
 
 A resource list displays a collection of objects of the same type, like products or customers. The main job of a resource list is to help merchants find an object and navigate to a full-page representation of it.
 
-<div class="TypeContainerImage TypeContainerImage--PageBackground">
-
-![Resource list anatomy, showing filters, header, and items](/public_images/resource-list/anatomy-wide@2x.png)
-
-</div>
-
 Resource lists can also:
 
 - Support [customized list items](#study-custom-item)
@@ -71,7 +65,7 @@ A resource list with simple items and no bulk actions, sorting, or filtering. Se
       const media = <Avatar customer size="medium" name={name} />;
 
       return (
-        <ResourceList.Item
+        <ResourceItem
           id={id}
           url={url}
           media={media}
@@ -81,7 +75,7 @@ A resource list with simple items and no bulk actions, sorting, or filtering. Se
             <TextStyle variation="strong">{name}</TextStyle>
           </h3>
           <div>{location}</div>
-        </ResourceList.Item>
+        </ResourceItem>
       );
     }}
   />
@@ -107,7 +101,7 @@ class ResourceListExample extends React.Component {
     const media = <Avatar customer size="medium" name={name} />;
 
     return (
-      <ResourceList.Item
+      <ResourceItem
         id={id}
         url={url}
         media={media}
@@ -117,7 +111,7 @@ class ResourceListExample extends React.Component {
           <TextStyle variation="strong">{name}</TextStyle>
         </h3>
         <div>{location}</div>
-      </ResourceList.Item>
+      </ResourceItem>
     );
   };
 
@@ -177,7 +171,7 @@ class ResourceListExample extends React.Component {
     const media = <Avatar customer size="medium" name={name} />;
 
     return (
-      <ResourceList.Item
+      <ResourceItem
         id={id}
         url={url}
         media={media}
@@ -187,7 +181,7 @@ class ResourceListExample extends React.Component {
           <TextStyle variation="strong">{name}</TextStyle>
         </h3>
         <div>{location}</div>
-      </ResourceList.Item>
+      </ResourceItem>
     );
   };
 
@@ -270,7 +264,7 @@ class ResourceListExample extends React.Component {
     const media = <Avatar customer size="medium" name={name} />;
 
     return (
-      <ResourceList.Item
+      <ResourceItem
         id={id}
         url={url}
         media={media}
@@ -280,7 +274,7 @@ class ResourceListExample extends React.Component {
           <TextStyle variation="strong">{name}</TextStyle>
         </h3>
         <div>{location}</div>
-      </ResourceList.Item>
+      </ResourceItem>
     );
   };
 
@@ -364,7 +358,7 @@ class ResourceListExample extends React.Component {
     const media = <Avatar customer size="medium" name={name} />;
 
     return (
-      <ResourceList.Item
+      <ResourceItem
         id={id}
         url={url}
         media={media}
@@ -374,7 +368,7 @@ class ResourceListExample extends React.Component {
           <TextStyle variation="strong">{name}</TextStyle>
         </h3>
         <div>{location}</div>
-      </ResourceList.Item>
+      </ResourceItem>
     );
   };
 
@@ -432,7 +426,7 @@ class ResourceListExample extends React.Component {
     const media = <Avatar customer size="medium" name={name} />;
 
     return (
-      <ResourceList.Item
+      <ResourceItem
         id={id}
         url={url}
         media={media}
@@ -442,7 +436,7 @@ class ResourceListExample extends React.Component {
           <TextStyle variation="strong">{name}</TextStyle>
         </h3>
         <div>{location}</div>
-      </ResourceList.Item>
+      </ResourceItem>
     );
   };
 
@@ -510,12 +504,12 @@ class ResourceListExample extends React.Component {
     const media = <Avatar customer size="medium" name={name} />;
 
     return (
-      <ResourceList.Item id={id} url={url} media={media}>
+      <ResourceItem id={id} url={url} media={media}>
         <h3>
           <TextStyle variation="strong">{name}</TextStyle>
         </h3>
         <div>{location}</div>
-      </ResourceList.Item>
+      </ResourceItem>
     );
   };
 
@@ -557,7 +551,7 @@ class ResourceListExample extends React.Component {
     ];
 
     const filterControl = (
-      <ResourceList.FilterControl
+      <Filters
         filters={filters}
         appliedFilters={this.state.appliedFilters}
         onFiltersChange={this.handleFiltersChange}
@@ -616,7 +610,7 @@ Shortcut actions are intended to provide quick access to popular actions from th
         : null;
 
       return (
-        <ResourceList.Item
+        <ResourceItem
           id={id}
           url={url}
           media={media}
@@ -627,7 +621,7 @@ Shortcut actions are intended to provide quick access to popular actions from th
             <TextStyle variation="strong">{name}</TextStyle>
           </h3>
           <div>{location}</div>
-        </ResourceList.Item>
+        </ResourceItem>
       );
     }}
   />
@@ -666,7 +660,7 @@ Use persistent shortcut actions in rare cases when the action cannot be made ava
         : null;
 
       return (
-        <ResourceList.Item
+        <ResourceItem
           id={id}
           url={url}
           media={media}
@@ -678,7 +672,7 @@ Use persistent shortcut actions in rare cases when the action cannot be made ava
             <TextStyle variation="strong">{name}</TextStyle>
           </h3>
           <div>{location}</div>
-        </ResourceList.Item>
+        </ResourceItem>
       );
     }}
   />
@@ -704,7 +698,7 @@ class ResourceListExample extends React.Component {
     const media = <Avatar customer size="medium" name={name} />;
 
     return (
-      <ResourceList.Item
+      <ResourceItem
         id={id}
         url={url}
         media={media}
@@ -715,7 +709,7 @@ class ResourceListExample extends React.Component {
           <TextStyle variation="strong">{name}</TextStyle>
         </h3>
         <div>{location}</div>
-      </ResourceList.Item>
+      </ResourceItem>
     );
   };
 
@@ -844,7 +838,7 @@ class ResourceListExample extends React.Component {
       ? [{content: 'View latest order', url: latestOrderUrl}]
       : null;
     return (
-      <ResourceList.Item
+      <ResourceItem
         id={id}
         url={url}
         media={media}
@@ -856,7 +850,7 @@ class ResourceListExample extends React.Component {
           <TextStyle variation="strong">{name}</TextStyle>
         </h3>
         <div>{location}</div>
-      </ResourceList.Item>
+      </ResourceItem>
     );
   };
   render() {
@@ -916,7 +910,7 @@ class ResourceListExample extends React.Component {
       },
     ];
     const filterControl = (
-      <ResourceList.FilterControl
+      <Filters
         filters={filters}
         appliedFilters={this.state.appliedFilters}
         onFiltersChange={this.handleFiltersChange}
@@ -962,8 +956,8 @@ class ResourceListExample extends React.Component {
 Using a resource list in a project involves combining the following components and subcomponents:
 
 - ResourceList
-- [ResourceList.Item](#subcomponent-item) or a [customized list item](#study-custom-item)
-- [ResourceList.FilterControl](#subcomponent-filter-control) (optional)
+- [ResourceItem](#subcomponent-item) or a [customized list item](#study-custom-item)
+- [Filters](#subcomponent-filter-control) (optional)
 - Pagination component (optional)
 
 <!-- hint -->
@@ -1073,204 +1067,6 @@ Resource lists should:
 - Follow the [content formula for sort options](#study-sorting-content-guidelines)
 
 - Follow the [content guidelines for filter options and applied filters](#study-filtering-content-guidelines)
-
----
-
-<a name="subcomponent-filter-control"></a>
-
-## Resource list filter control
-
-Provides a default interface for adding and removing filters. Supports quick filtering using a text field. A more advanced filter builder can be accessed from a popover. Applied filters are represented as removeable tags.
-
-<div class="TypeContainerImage TypeContainerImage--PageBackground">
-
-![Resource list with filter control](/public_images/resource-list/filter-control-anatomy@2x.png)
-
-</div>
-
-<a name="subcomponent-filter-control-examples"></a>
-
-### Filter control examples
-
-#### Resource list with filter control
-
-Filter control showing a state with applied filters and an additional action (optional).
-
-<div class="TypeContainerImage">
-
-![Example filter control](/public_images/resource-list/filter-control-example@2x.png)
-
-</div>
-
-```jsx
-<ResourceList
-  resourceName={{singular: 'customer', plural: 'customers'}}
-  items={[
-    {
-      id: 341,
-      url: 'customers/341',
-      name: 'Mae Jemison',
-      location: 'Decatur, USA',
-    },
-    {
-      id: 256,
-      url: 'customers/256',
-      name: 'Ellen Ochoa',
-      location: 'Los Angeles, USA',
-    },
-  ]}
-  renderItem={(item) => {
-    const {id, url, name, location} = item;
-    const media = <Avatar customer size="medium" name={name} />;
-
-    return (
-      <ResourceList.Item
-        id={id}
-        url={url}
-        media={media}
-        accessibilityLabel={`View details for ${name}`}
-      >
-        <h3>
-          <TextStyle variation="strong">{name}</TextStyle>
-        </h3>
-        <div>{location}</div>
-      </ResourceList.Item>
-    );
-  }}
-  filterControl={
-    <ResourceList.FilterControl
-      filters={[
-        {
-          key: 'orderCountFilter',
-          label: 'Number of orders',
-          operatorText: 'is greater than',
-          type: FilterType.TextField,
-        },
-        {
-          key: 'accountStatusFilter',
-          label: 'Account status',
-          operatorText: 'is',
-          type: FilterType.Select,
-          options: ['Enabled', 'Invited', 'Not invited', 'Declined'],
-        },
-      ]}
-      appliedFilters={[
-        {
-          key: 'orderCountFilter',
-          value: '1',
-          label: 'Has orders',
-        },
-        {
-          key: 'accountStatusFilter',
-          value: 'Enabled',
-          label: 'Account enabled',
-        },
-      ]}
-      onFiltersChange={(appliedFilters) => {
-        console.log(
-          `Applied filters changed to ${appliedFilters}.`,
-          'Todo: use setState to apply this change.',
-        );
-      }}
-      searchValue="USA"
-      onSearchChange={(searchValue) => {
-        console.log(
-          `Search value changed to ${searchValue}.`,
-          'Todo: use setState to apply this change.',
-        );
-      }}
-      additionalAction={{
-        content: 'Save',
-        onAction: () => console.log('Todo: handle save filters.'),
-      }}
-    />
-  }
-/>
-```
-
-<a name="subcomponent-filter-control-props"></a>
-
-### Filter control properties
-
-| Prop            | Type                                            | Description                                     |
-| --------------- | ----------------------------------------------- | ----------------------------------------------- |
-| searchValue     | string                                          | Currently entered text in the search term field |
-| appliedFilters  | AppliedFilter[]                                 | Collection of currently applied filters         |
-| focused         | boolean                                         | Whether the search term field is focused        |
-| filters         | Filter[]                                        | Available filters                               |
-| onSearchBlur    | function(): void                                | Callback when the search term field is blurred  |
-| onSearchChange  | function(searchvalue: string, id: string): void | Callback when the search term field is changed  |
-| onFiltersChange | function(appliedFilters: AppliedFilter[]): void | Callback when the applied filters are changed   |
-
-<a name="subcomponent-filter-control-best-practices"></a>
-
-### Filter control best practices
-
-A Resource list’s filter control should:
-
-- Make filters available that make common merchant tasks easy. For example, provide the option for merchants to filter a customer’s list to email subscribers only. Don’t offer arbitrary filters.
-- Show relevant results for a wide range of search inputs, including partial words. For example, if merchants type “unful” in the search field for an orders list, it should return all unfulfilled orders as a the result (as well as orders with this string elsewhere in Shopify, such as in an order note).
-
-<a name="subcomponent-filter-control-content-guidelines"></a>
-
-### Filter control content guidelines
-
-Content for the filter control appears in two places: the filter builder and the removable tags that represent applied filters.
-
-#### Filter builder content
-
-The filter builder itself has three parts: the **label**, the **operator text**, and the **filter input**.
-
-<div class="TypeContainerImage TypeContainerImage--PageBackground">
-
-![Example filter builder in a popover](/public_images/resource-list/filter-control-filter-builder@2x.png)
-
-</div>
-
-In this example:
-
-- “Account status” is the **label**
-- “is” is the **operator text**
-- “Enabled” is one of several options that make up the **filter input**
-
-Here’s another example:
-
-<div class="TypeContainerImage TypeContainerImage--PageBackground">
-
-![Second filter builder example](/public_images/resource-list/filter-control-filter-builder-2@2x.png)
-
-</div>
-
-In this case, a the **filter input** is a text field, so you only need to consider copy for the **label**, “Number of orders” and **operator text**, “is greater than”.
-
-- Filter label and filter input should follow the [select menu options guidelines](https://polaris.shopify.com/components/forms/select#section-content-guidelines)
-- Operator text should start with a lowercase letter
-- All three content elements should form a sentence
-- Operator text may be left out if the sentence reads more clearly without it
-
-### Applied filter tags
-
-<div class="TypeContainerImage">
-
-![Example of applied filter tags](/public_images/resource-list/filter-control-filter-tags@2x.png)
-
-</div>
-
-The content that represents applied filter tags should use short, clear, non-technical labels.
-
-<!-- usagelist -->
-
-#### Do
-
-- Has orders
-- More than 10 orders
-
-#### Don’t
-
-- Number of orders is greater than 0
-- order_count >= 10
-
-<!-- end -->
 
 ---
 
@@ -1414,10 +1210,10 @@ class App extends Component {
               const media = <Avatar customer size="medium" name={name} />;
 
               return (
-                <ResourceList.Item id={id} url={url} media={media} accessibilityLabel={`View details for ${name}`}>
+                <ResourceItem id={id} url={url} media={media} accessibilityLabel={`View details for ${name}`}>
                   <h3><TextStyle variation="strong">{name}</TextStyle></h3>
                   <div>{location}</div>
-                </ResourceList.Item>
+                </ResourceItem>
               );
             }}
           />
@@ -1588,10 +1384,10 @@ export default function CustomerListItem(props) {
 
   return (
     <div className="CustomerListItem">
-      <ResourceList.Item id={id} url={url} media={media} accessibilityLabel={`View details for ${name}`}>
+      <ResourceItem id={id} url={url} media={media} accessibilityLabel={`View details for ${name}`}>
         <h3><TextStyle variation="strong">{name}</TextStyle></h3>
         <div>{location}</div>
-      </ResourceList.Item>
+      </ResourceItem>
     </div>
   );
 }
@@ -1683,20 +1479,20 @@ export default function CustomerListItem(props) {
 
   return (
     <div className="CustomerListItem">
-      <ResourceList.Item id={id} url={url} media={media} accessibilityLabel={`View details for ${name}`}>
+      <ResourceItem id={id} url={url} media={media} accessibilityLabel={`View details for ${name}`}>
         <h3>{name}</h3>
         <div>{location}</div>
         <div>
           {orderCount} {orderCount === 1 ? 'order' : 'orders'}
         </div>
         <div>{totalSpent} spent</div>
-      </ResourceList.Item>
+      </ResourceItem>
     </div>
   );
 }
 ```
 
-It’s worth noting that we’re not really doing anything with `id` and `url` in this component. We’re just “forwarding” them on to `ResourceList.Item`. We can use the rest and spread operators to make this more resilient, so that `CustomerListItem` accepts any prop that `ResourceList.Item` does:
+It’s worth noting that we’re not really doing anything with `id` and `url` in this component. We’re just “forwarding” them on to `ResourceItem`. We can use the rest and spread operators to make this more resilient, so that `CustomerListItem` accepts any prop that `ResourceItem` does:
 
 ```jsx
 ...
@@ -1716,7 +1512,7 @@ export default function CustomerListItem(props) {
 
   return (
     <div className="CustomerListItem">
-      <ResourceList.Item {...rest} media={media} accessibilityLabel={`View details for ${name}`}>
+      <ResourceItem {...rest} media={media} accessibilityLabel={`View details for ${name}`}>
         ...
 ```
 
@@ -1775,7 +1571,7 @@ To handle the layout, we’ll need some class names and some wrapping markup.
 ```jsx
   ...
     <div className="CustomerListItem">
-      <ResourceList.Item {...rest} media={media} accessibilityLabel={`View details for ${name}`}>
+      <ResourceItem {...rest} media={media} accessibilityLabel={`View details for ${name}`}>
         <h3 className="CustomerListItem__Title">{name}</h3>
         <div className="CustomerListItem__Location">{location}</div>
         <div className="CustomerListItem__Orders">
@@ -1784,7 +1580,7 @@ To handle the layout, we’ll need some class names and some wrapping markup.
           </div>
           <div className="CustomerListItem__TotalSpent">{totalSpent} spent</div>
         </div>
-      </ResourceList.Item>
+      </ResourceItem>
     </div>
   ...
 ```
@@ -1854,12 +1650,12 @@ Now that we have our small screen layout, we can layer on the layouts for medium
 
   return (
     <div className="CustomerListItem">
-      <ResourceList.Item {...rest} media={media} accessibilityLabel={`View details for ${name}`}>
+      <ResourceItem {...rest} media={media} accessibilityLabel={`View details for ${name}`}>
         <div className="CustomerListItem__Main">
           {profile}
           {orders}
         </div>
-      </ResourceList.Item>
+      </ResourceItem>
     </div>
   );
 }
@@ -2017,14 +1813,14 @@ export default function CustomerListItem(props) {
 
   return (
     <div className="CustomerListItem">
-      <ResourceList.Item {...rest} media={media} accessibilityLabel={`View details for ${name}`}>
+      <ResourceItem {...rest} media={media} accessibilityLabel={`View details for ${name}`}>
         <div className="CustomerListItem__Main">
           {profile}
           {orders}
         </div>
         {exceptionList}
         {conditionalActions}
-      </ResourceList.Item>
+      </ResourceItem>
     </div>
   );
 }
@@ -2114,7 +1910,7 @@ Shortcut actions should:
 
 ##### Building it
 
-Shortcut actions can be defined as part of our custom list item, or we can leave it up to the developer using our component to define them for each list, just as they would using `ResourceList.Item`.
+Shortcut actions can be defined as part of our custom list item, or we can leave it up to the developer using our component to define them for each list, just as they would using `ResourceItem`.
 
 If we were to build a shortcut action into the custom item, we could offer merchants a link to the customer’s most recent order instead of conditional actions. We could add a prop to allow this:
 
@@ -2134,7 +1930,7 @@ If we were to build a shortcut action into the custom item, we could offer merch
 
   return (
     <div className="CustomerListItem">
-      <ResourceList.Item
+      <ResourceItem
         {...rest}
         media={media}
         shortcutActions={shortcutActions}
@@ -2718,7 +2514,7 @@ Resource list doesn’t accept these available filters directly. Instead, it del
         ...
         onSortChange={this.handleSortChange}
         filterControl={
-          <ResourceList.FilterControl
+          <Filters
             filters={availableFilters}
           />
         }
@@ -2764,7 +2560,7 @@ class App extends Component {
         sortValue={sortValue}
         onSortChange={this.handleSortChange}
         filterControl={
-          <ResourceList.FilterControl
+          <Filters
             filters={availableFilters}
             appliedFilters={appliedFilters}
             onFiltersChange={this.handleFiltersChange}
@@ -2972,7 +2768,7 @@ If we want to allow selecting all items across all pages in our paginated resour
       <ResourceList
         ...
         filterControl={
-          <ResourceList.FilterControl
+          <Filters
             ...
           />
         }
@@ -3170,7 +2966,7 @@ class App extends Component {
             sortValue={sortValue}
             onSortChange={this.handleSortChange}
             filterControl={
-              <ResourceList.FilterControl
+              <Filters
                 filters={availableFilters}
                 appliedFilters={appliedFilters}
                 onFiltersChange={this.handleFiltersChange}
@@ -3280,7 +3076,7 @@ When merchants use sorting and filtering controls to update items in the list, t
 
 ### Navigation
 
-Primarily, items in a resource list function as links to the full-page representations of the items. Each item should have a unique `name` prop. For each `ResourceList.Item`, the `accessibilityLabel` prop should be used to give the link a unique `aria-label`. The `aria-label` should convey the link’s purpose, using the `name` value. Merchants who use screen readers should be able to easily distinguish each link from the others.
+Primarily, items in a resource list function as links to the full-page representations of the items. Each item should have a unique `name` prop. For each `ResourceItem`, the `accessibilityLabel` prop should be used to give the link a unique `aria-label`. The `aria-label` should convey the link’s purpose, using the `name` value. Merchants who use screen readers should be able to easily distinguish each link from the others.
 
 ### Keyboard
 
