@@ -52,12 +52,6 @@ The resource item component must be wrapped in a [resource list](/components/lis
 
 A basic resource item with its details filled in at the point of use.
 
-<div class="TypeContainerImage TypeContainerImage--PageBackground">
-
-![Blog post list item](/public_images/resource-list/item-example-simple@2x.png)
-
-</div>
-
 ```jsx
 <Card>
   <ResourceList
@@ -94,12 +88,6 @@ A basic resource item with its details filled in at the point of use.
 ### Item with media
 
 The media element can hold an [avatar](/components/images-and-icons/avatar), [thumbnail](/components/images-and-icons/thumbnail) or other small-format graphic.
-
-<div class="TypeContainerImage TypeContainerImage--PageBackground">
-
-![Example customer list item](/public_images/resource-list/item-example-media@2x.png)
-
-</div>
 
 ```jsx
 <Card>
@@ -140,12 +128,6 @@ The media element can hold an [avatar](/components/images-and-icons/avatar), [th
 ### Item with shortcut actions
 
 Shortcut actions present popular actions from the resource’s details page for easy access.
-
-<div class="TypeContainerImage TypeContainerImage--PageBackground">
-
-![Shortcut actions are shown on hover](/public_images/resource-list/item-example-shortcuts@2x.png)
-
-</div>
 
 ```jsx
 <Card>

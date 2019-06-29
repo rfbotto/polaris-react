@@ -25,7 +25,7 @@ export type ExceptionStatus = 'neutral' | 'warning' | 'critical';
 export type MediaSize = 'small' | 'medium' | 'large';
 export type MediaType = 'avatar' | 'thumbnail';
 
-export interface BaseProps {
+export interface Props {
   /** Visually hidden text for screen readers */
   accessibilityLabel?: string;
   /** Id of the element the item onClick controls */
@@ -38,29 +38,29 @@ export interface BaseProps {
   media?: React.ReactElement<AvatarProps | ThumbnailProps>;
   /** Makes the shortcut actions always visible */
   persistActions?: boolean;
-  /** 1 or 2 shortcut actions; must be available on the page linked to by \`url\` */
+  /** 1 or 2 shortcut actions; must be available on the page linked to by url */
   shortcutActions?: DisableableAction[];
   /** The order the item is rendered */
   sortOrder?: number;
-  /** URL for the resource’s details page (required unless \`onClick\` is provided) */
+  /** URL for the resource’s details page (required unless onClick is provided) */
   url?: string;
-  /** Callback when clicked (required if \`url\` is omitted) */
+  /** Callback when clicked (required if url is omitted) */
   onClick?(id?: string): void;
   /** Content for the details area */
   children?: React.ReactNode;
 }
 
-export interface PropsWithUrl extends BaseProps {
+export interface PropsWithUrl extends Props {
   url: string;
   onClick?(id?: string): void;
 }
 
-export interface PropsWithClick extends BaseProps {
+export interface PropsWithClick extends Props {
   url?: string;
   onClick(id?: string): void;
 }
 
-export type Props = PropsWithUrl | PropsWithClick;
+export type ConditionalProps = PropsWithUrl | PropsWithClick;
 
 export interface State {
   actionsMenuVisible: boolean;
